@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Drag and Drop List Reordering</title>
+        <style>
+
+  .list-item {
+    padding: 10px;
+    width: 25%;
+    text-align: center;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    cursor: pointer;
+  }
+</style>
+    </head>
+    <body>
+
+        <ul id="sortableList">
+            <li class="list-item" draggable="true">Item 1</li>
+            <li class="list-item" draggable="true">Item 2</li>
+            <li class="list-item" draggable="true">Item 3</li>
+            <li class="list-item" draggable="true">Item 4</li>
+        </ul>
+
+        <script>
+  const sortableList = document.getElementById('sortableList');
+
+  let draggedItem = null;
+
+  function handleDragStart(event) {
+    draggedItem = event.target;
+    event.dataTransfer.setData('text/plain', draggedItem.innerHTML);
+  }
+
+  function handleDragOver(event) {
+    event.preventDefault();
+  }
+
+  function handleDrop(event) {
+    event.preventDefault();
+    const dropTarget = event.target;
+    draggedItem.innerHTML = dropTarget.innerHTML;
+    dropTarget.innerHTML = event.dataTransfer.getData('text/plain');
+  }
+
+  const items = document.querySelectorAll('.list-item');
+  items.forEach(item => {
+    item.addEventListener('dragstart', handleDragStart);
+    item.addEventListener('dragover', handleDragOver);
+    item.addEventListener('drop', handleDrop);
+  });
+</script>
+
+    </body>
+</html>
