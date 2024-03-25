@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Change Background Color on Mouse Enter</title>
+        <script>
+  function changeColor(elementId, color) {
+    document.getElementById(elementId).style.backgroundColor = color;
+  }
+</script>
+        <style>
+  .change-color {
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+  }
+</style>
+    </head>
+    <body>
+
+        <div id="myElement" class="change-color"
+            onmouseover="changeColor('myElement', 'lightblue')"
+            onmouseout="changeColor('myElement', 'white')">
+            Move your mouse over me to change my background color
+        </div>
+
+    </body>
+</html>

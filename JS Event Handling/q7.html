@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Toggle Switch</title>
+        <style>
+
+  .toggle-switch {
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+    position: relative;
+    cursor: pointer;
+    border-radius: 15px;
+    background-color: #ccc;
+    transition: background-color 0.3s ease;
+  }
+
+  .toggle-handle {
+    position: absolute;
+    top: 50%;
+    left: 2px;
+    transform: translate(0, -50%);
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background-color: white;
+    transition: transform 0.3s ease;
+  }
+
+  .toggle-switch.on {
+    background-color: #66bb6a;
+  }
+
+  .toggle-switch.off .toggle-handle {
+    left: calc(100% - 28px);
+  }
+</style>
+    </head>
+    <body>
+        <div id="toggleSwitch" class="toggle-switch" onclick="toggleSwitch()">
+            <div class="toggle-handle"></div>
+        </div>
+
+        <script>
+ 
+  function toggleSwitch() {
+    const toggleSwitch = document.getElementById('toggleSwitch');
+    toggleSwitch.classList.toggle('on');
+    toggleSwitch.classList.toggle('off');
+  }
+</script>
+
+    </body>
+</html>
