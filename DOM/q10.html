@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Calculate Sphere Volume</title>
+    </head>
+    <body>
+        <form>
+            Enter the radius of the sphere: <input type="number"
+                id="radiusInput">
+            <input type="button" onclick="calculateVolume()"
+                value="Calculate Volume">
+        </form>
+
+        <script>
+    function calculateVolume() {
+      var radius = document.getElementById('radiusInput').value;
+
+      var volume = (4 / 3) * Math.PI * Math.pow(radius, 3);
+      alert('The volume of the sphere is ' + volume.toFixed(2) + ' cubic units');
+    }
+  </script>
+    </body>
+</html>
