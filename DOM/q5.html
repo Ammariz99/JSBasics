@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Add Rows to Table</title>
+    </head>
+    <body>
+        <table id="myTable">
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+            </tr>
+            <tr>
+                <td>Ammar</td>
+                <td>25</td>
+            </tr>
+            <tr>
+                <td>Ali</td>
+                <td>22</td>
+            </tr>
+        </table>
+        <br>
+        <button onclick="addRow()">Add Row</button>
+
+        <script>
+    function addRow() {
+      var table = document.getElementById('myTable');
+
+      var newRow = table.insertRow();
+
+      var cell1 = newRow.insertCell(0);
+      var cell2 = newRow.insertCell(1);
+
+      cell1.innerHTML = 'New Name';
+      cell2.innerHTML = 'New Age';
+    }
+  </script>
+    </body>
+</html>
